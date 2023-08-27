@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECITONE</title>
+    <meta name="description" content="kintoneアプリのレシピをAIが考えてくれるWebツールです。必要なフィールドや、設定すべき選択肢がレシピとして出力されます。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <main>
+        <h1>RECITONE by udcxx.</h1>
+
+        <p class="description">kintoneでアプリを作るとき、どんなフィールドを用意したらいいかのヒントをAIが教えてくれます。<br>アプリ作りのレシピとして活用ください。</p>
+    
+        <div class="bord">
+            <form action="./result/" method="POST" class="top--form" onsubmit="loading()">
+                <textarea name="prompt" id="prompt" class="top--input"></textarea>
+                <button type="submit" class="top--submit" disabled>レシピを見る</button>
+            </form>
+            <p class="bord--notice">「◯◯を管理したい」のように、アプリでやりたいことを具体的に入力すると、より正確なレシピが得られるかも...？</p>
+        </div>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1301045842322864" crossorigin="anonymous"></script>
+        <!-- recitone -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-1301045842322864"
+            data-ad-slot="5658273013"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    
+        <footer>&copy; <a href="https://udcxx.me/" target="_blank">udcxx.me</a></footer>
+    </main>
+
+    <div class="top--loading">
+        <div class="top--loadanimation">
+            <div class="sk-cube-grid">
+                <div class="sk-cube sk-cube1"></div>
+                <div class="sk-cube sk-cube2"></div>
+                <div class="sk-cube sk-cube3"></div>
+                <div class="sk-cube sk-cube4"></div>
+                <div class="sk-cube sk-cube5"></div>
+                <div class="sk-cube sk-cube6"></div>
+                <div class="sk-cube sk-cube7"></div>
+                <div class="sk-cube sk-cube8"></div>
+                <div class="sk-cube sk-cube9"></div>
+            </div>
+            <p>AIがレシピを考えています...</p>
+        </div>
+    </div>
+
+    <script>
+        const inputArea = document.getElementById('prompt');
+        const submitButton = document.querySelector('.top--submit');
+        inputArea.addEventListener('keyup', () => {
+            if (inputArea.value) {
+                submitButton.disabled = null;
+            } else {
+                submitButton.disabled = 'disabled';
+            }
+        });
+
+        const loading = () => {
+            document.querySelector('.top--loading').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
