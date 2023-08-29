@@ -33,11 +33,12 @@ h1 {
 }
 
 .bord {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 40px 10px;
     color: #333;
     border-radius: 10px;
+    box-sizing: border-box;
     background-color: #d1d5d5;
 }
 .bord--notice {
@@ -64,7 +65,7 @@ footer a {
 
 */
 .top--form {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -96,6 +97,24 @@ footer a {
 .top--submit:disabled, .top--submit:disabled:hover {
     background-color: #d1d5d5;
     cursor: unset;
+}
+.top--rules {
+    width: 90%;
+    margin: 40px auto;
+    padding: 15px 60px 15px 30px;
+    color: #333;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #d1d5d5;
+}
+.top--rules--title {
+    font-size: 18px; font-weight: bold;
+    cursor: pointer;
+}
+.top--rules--item {
+    margin-bottom: 0.7em;
+    font-size: 14px;
+    line-height: 1.2em;
 }
 .top--loading {
     width: 100vw; height: 100vh;
