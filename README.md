@@ -36,6 +36,7 @@ RECITONEに関する記事
 | 2023/08/24 | 公開 | 1.0.0 |
 | 2023/08/25 | noteとブログに記事を掲載 | |
 | 2023/08/27 | 微修正（[#1](https://github.com/udcxx/recitone/issues/1)）とリポジトリの公開 | 1.1.0 |
+| 2023/08/29 | 利用規約の追加（[#3](https://github.com/udcxx/recitone/issues/3)）と微修正（[#2](https://github.com/udcxx/recitone/issues/2)） | 1.2.0 |
 
 ## Contact
 
