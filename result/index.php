@@ -159,6 +159,10 @@
 
                 } else if (field.type === "time") {
                     fieldTypeSelect.appendChild(createOption('時刻'));
+
+                } else if (field.type === "file") {
+                    fieldTypeSelect.appendChild(createOption('添付ファイル'));
+
                 }
 
                 ddType.appendChild(fieldTypeSelect);
