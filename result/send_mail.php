@@ -3,6 +3,8 @@
 $sendto = $_POST['address'];
 $content = $_POST['content'];
 
+require_once '../vars.php';
+
 // 設置した場所のパスを指定する
 require('../PHPMailer/src/PHPMailer.php');
 require('../PHPMailer/src/Exception.php');
@@ -29,18 +31,18 @@ try {
 
   // SMTPサーバの設定
   $mail->isSMTP();                          // SMTPの使用宣言
-  $mail->Host       = 'os1001.coreserver.jp';   // SMTPサーバーを指定
+  $mail->Host       = $server;   // SMTPサーバーを指定
   $mail->SMTPAuth   = true;                 // SMTP authenticationを有効化
-  $mail->Username   = 'send-only@udcxx.me';   // SMTPサーバーのユーザ名
-  $mail->Password   = 'tdEwDZ5Lusda';           // SMTPサーバーのパスワード
+  $mail->Username   = $user_name;   // SMTPサーバーのユーザ名
+  $mail->Password   = $password;           // SMTPサーバーのパスワード
   $mail->SMTPSecure = 'ssl';  // 暗号化を有効（tls or ssl）無効の場合はfalse
   $mail->Port       = 465; // TCPポートを指定（tlsの場合は465や587）
 
   // 送受信先設定（第二引数は省略可）
-  $mail->setFrom('send-only@udcxx.me', 'RECITONE by udcxx.'); // 送信者
+  $mail->setFrom($from_address, 'RECITONE by udcxx.'); // 送信者
   $mail->addAddress($sendto);   // 宛先
-  $mail->addReplyTo('me@udcxx.me', 'udcxx.'); // 返信先
-  $mail->Sender = 'send-only@udcxx.me'; // Return-path
+  $mail->addReplyTo($reply_address, 'udcxx.'); // 返信先
+  $mail->Sender = $from_address; // Return-path
 
   // 送信内容設定
   $mail->Subject = '【RECITONE】AIが考えたレシピをお届けします'; 
