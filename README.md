@@ -40,6 +40,7 @@ RECITONEに関する記事
 | 2023/09/11 | 添付ファイルフィールドへ対応（[#5](https://github.com/udcxx/recitone/issues/5)）| 1.3.0 |
 | 2023/10/03 | 結果のメール送信へ対応（[#6](https://github.com/udcxx/recitone/issues/6)）| 1.4.0 |
 | 2023/10/03 | 微修正 | 1.4.1 |
+| 2023/10/03 | 微修正（[#10](https://github.com/udcxx/recitone/issues/10)） | 1.4.2 |
 
 ## Contact
 
