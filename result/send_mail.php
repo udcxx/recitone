@@ -3,7 +3,7 @@
 $sendto = $_POST['address'];
 $content = $_POST['content'];
 
-require_once('../vars.php');
+require_once '../vars.php';
 
 // 設置した場所のパスを指定する
 require('../PHPMailer/src/PHPMailer.php');
