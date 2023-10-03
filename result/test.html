@@ -1,32 +1,3 @@
-<?php
-    require_once '../vars.php';
-
-    $CURLERR = NULL;
-
-    if (isset($_SERVER['HTTP_REFERER'])) {
-        $referer = $_SERVER['HTTP_REFERER'];
-    } else {
-        $referer = "unknown";
-    }
-
-    $data = array(
-        'prompt' => $_POST['prompt'],
-        'ip_address' => $_SERVER['REMOTE_ADDR'], 
-        'referer' => $referer
-    );
-
-    $data_json = json_encode($data);
-
-    $context = array(
-        'http' => array(
-            'method'  => 'POST',
-            'header'  => implode("\r\n", array('Content-Type: application/json',)),
-            'content' => $data_json
-        )
-    );
-    $responce = file_get_contents($url, false, stream_context_create($context));
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -60,7 +31,7 @@ AIが考えたkintoneアプリのレシピをお届けします。
 
 
 </textarea>
-            <button type="button" class="send_mail--button">メールでレシピを送信する</button>
+            <button type="button" class="send_mail--button">メールで結果を送信する</button>
         </div>
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1301045842322864" crossorigin="anonymous"></script>
@@ -97,7 +68,7 @@ AIが考えたkintoneアプリのレシピをお届けします。
             return true;
         }
 
-        const response = <?php echo $responce; ?>
+        const response = {"fields":[{"type":"text", "name":"タイトル"},{"type":"textarea", "name":"本文"},{"type":"checkbox", "name":"宛先", "items":["Aさん", "Bさん", "Cさん"]},{"type":"text", "name":"差出人"},{"type":"datetime", "name":"送信日時"},{"type":"file", "name":"添付ファイル"}]};
 
         if (checkJson(response)) {
             const createNameEl = (name) => {
@@ -231,9 +202,6 @@ AIが考えたkintoneアプリのレシピをお届けします。
                 // メール用
                 document.getElementById('mail_content').textContent += createMailText(field);
             });
-
-            document.getElementById('mail_content').textContent += '----------\n\n■ RECITONE\nhttps://play.udcxx.me/recitone/\n\n■ RECITONEの制作者については、以下のページをご覧ください。\nポートフォリオ：https://udcxx.me/\nブログ：https://blog.udcxx.me/\nnote：https://note.com/udcxx\n\n■ kintoneのアプリやカスタマイズの販売も行っています！\nhttps://udcxx.stores.jp/';
-
         } else {
             document.querySelector('.description').innerHTML = `レシピの生成に失敗しました。<br>お手数ですが、 <a href="../">こちら</a> から再度お試しください。`;
             document.querySelector('.bord').style.display = 'none';

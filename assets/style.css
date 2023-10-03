@@ -232,6 +232,39 @@ footer a {
     font-size: 17px;
     line-height: 1.2em;
 }
+
+/* メール送信 */
+.send_mail--description {
+    width: 95%;
+    margin: 40px auto 0;
+}
+.send_mail--address {
+    width: 95%;
+    margin: 20px auto 0;
+    padding: 10px 5px;
+    display: block;
+    font-family: 'BIZ UDPGothic';
+    font-size: 17px;
+    color: #333;
+    border: none;
+    background-color: #fff;
+}
+.send_mail--button {
+    margin: 20px auto 0;
+    background-color: #f1a957;
+    border: solid 2px #f7f7f7;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f7f7f7;
+    letter-spacing: 0.2em;
+    display: block;
+    appearance: none;    
+}
+
 .success--url {
     width: 100%;
     margin: 0 auto 20px;
