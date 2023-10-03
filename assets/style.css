@@ -262,7 +262,11 @@ footer a {
     color: #f7f7f7;
     letter-spacing: 0.2em;
     display: block;
-    appearance: none;    
+    appearance: none;
+}
+.send_mail--button:disabled, .send_mail--button:disabled:hover {
+    background-color: #d1d5d5;
+    cursor: unset;
 }
 
 .success--url {

@@ -60,7 +60,7 @@ AIが考えたkintoneアプリのレシピをお届けします。
 
 
 </textarea>
-            <button type="button" class="send_mail--button">メールでレシピを送信する</button>
+            <button type="button" class="send_mail--button" disabled>メールでレシピを送信する</button>
         </div>
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1301045842322864" crossorigin="anonymous"></script>
@@ -241,7 +241,20 @@ AIが考えたkintoneアプリのレシピをお届けします。
 
         const sendButton = document.querySelector('.send_mail--button');
 
+        const pattern = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
+
+        const inputArea = document.querySelector('.send_mail--address');
+        inputArea.addEventListener('keyup', () => {
+            if (pattern.test(inputArea.value)) {
+                sendButton.disabled = null;
+            } else {
+                sendButton.disabled = 'disabled';
+            }
+        });
+
         sendButton.addEventListener('click', () => {
+            sendButton.disabled = 'disabled';
+            
             let form = document.createElement('form');
             let inputAddress = document.createElement('input');
             let inputContent = document.createElement('textarea');
@@ -253,7 +266,7 @@ AIが考えたkintoneアプリのレシピをお届けします。
             inputContent.name = 'content';
 
             document.querySelector('body').appendChild(form);
-            // form.style.display = 'none';
+            form.style.display = 'none';
             form.appendChild(inputAddress);
             form.appendChild(inputContent);
 
